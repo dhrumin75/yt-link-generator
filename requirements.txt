@@ -1,0 +1,11 @@
+streamlit==1.7.0
+yt_dlp==2022.2.4
+blinker
+numpy
+pandas
+pillow
+protobuf
+pyarrowpydeck
+pympler
+tornado
+watchdog
