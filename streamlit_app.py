@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from yt_dlp import YoutubeDL
 import streamlit as st
-
+import pyshorteners as sh
 
 st.title("YT Video Link Generator")
 
@@ -30,3 +30,14 @@ submit = st.button("Submit")
 
 if submit:
     st.write("Video link is: \n\n\n ", links_dict[physical_form])
+
+    shortener = sh.Shortener()
+    try:
+    	short_url = shortener.tinyurl.short(links_dict[physical_form])
+    	st.write("\n\nShortened link: \n", short_url)
+    except:
+    	st.write('\n\nCannot connect to TinyURL server to create a short link.')
+
+    # st.write(shortener.tinyurl.expand(short_url))
+
+
